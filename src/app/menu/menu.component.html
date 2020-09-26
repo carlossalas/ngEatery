@@ -1,1 +1,7 @@
 <p>menu works!</p>
+
+<ul>
+  <li *ngFor="let dish of dishes">
+    <app-dish [name]="dish.name" [ingredients]="dish.ingredients"></app-dish>
+  </li>
+</ul>
