@@ -15,32 +15,32 @@ export class MenuComponent implements OnInit {
       {
         name: 'Ceviche',
         ingredients: [
-          { name: 'limones' },
-          { name: 'cebollas' },
+          { name: 'limones', qty: 2 },
+          { name: 'cebollas', qty: 2 },
         ]
       },
       {
         name: 'Tallarines Verdes',
         ingredients: [
-          { name: '½ kilo de tallarines' },
-          { name: '200 gramos de queso fresco' },
+          { name: '½ kilo de tallarines', qty: 2 },
+          { name: '200 gramos de queso fresco', qty: 2 },
         ]
       },
       {
         name: 'Causa Rellena de Pollo',
         ingredients: [
-          { name: '1 kilogramo de papas' },
-          { name: '5 cucharadas de pasta de ají amarillo' },
-          { name: '2 paltas' },
+          { name: '1 kilogramo de papas', qty: 2 },
+          { name: '5 cucharadas de pasta de ají amarillo', qty: 2 },
+          { name: '2 paltas', qty: 2 },
         ]
       },
       {
         name: 'Lomo Saltado de Pollo',
         ingredients: [
-          { name: '4 pechugas de pollo' },
-          { name: '5 tallos de cebolla china' },
-          { name: '1 cebolla' },
-          { name: '2 tomates' },
+          { name: '4 pechugas de pollo', qty: 2 },
+          { name: '5 tallos de cebolla china', qty: 2 },
+          { name: '1 cebolla', qty: 2 },
+          { name: '2 tomates', qty: 2 },
         ]
       },
     ]
