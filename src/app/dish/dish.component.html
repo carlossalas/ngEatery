@@ -1,1 +1,7 @@
-<p>{{ name }}, {{ generateCantIngredient() }}</p>
+<p><strong>{{ name }}</strong>&nbsp;<button (click)="selectDish()">Seleccionar</button></p>
+<p>Ingredientes ({{ generateCantIngredient() }})</p>
+<ul>
+  <li *ngFor="let ingredient of ingredients">
+    <span>{{ ingredient.name }} ({{ ingredient.qty }})</span>
+  </li>
+</ul>

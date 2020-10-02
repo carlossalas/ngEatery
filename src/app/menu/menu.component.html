@@ -2,6 +2,12 @@
 
 <ul>
   <li *ngFor="let dish of dishes">
-    <app-dish [name]="dish.name" [ingredients]="dish.ingredients"></app-dish>
+    <!-- <app-dish [name]="dish.name" [ingredients]="dish.ingredients"></app-dish> -->
+    <app-dish [dish]="dish" (onSelectDish)="selectedDish($event)"></app-dish>
   </li>
 </ul>
+
+<div *ngIf="dish">
+  <h2>Receta Seleccionada</h2>
+  <app-dish [dish]="dish"></app-dish>
+</div>

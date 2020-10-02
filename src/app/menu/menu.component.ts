@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Dish } from '../interfaces/dish.interface'
+import { Dish } from '../interfaces';
 
 @Component({
   selector: 'app-menu',
@@ -10,43 +10,49 @@ export class MenuComponent implements OnInit {
 
   dishes: Array<Dish> = [];
 
+  dish: Dish;
+
   constructor() {
     this.dishes = [
       {
         name: 'Ceviche',
         ingredients: [
-          { name: 'limones', qty: 2 },
-          { name: 'cebollas', qty: 2 },
+          { name: 'Limones', qty: 2 },
+          { name: 'Cebollas', qty: 2 },
         ]
       },
       {
         name: 'Tallarines Verdes',
         ingredients: [
-          { name: '½ kilo de tallarines', qty: 2 },
-          { name: '200 gramos de queso fresco', qty: 2 },
+          { name: '1/2 kilo de tallarines', qty: 1 },
+          { name: '200 gramos de queso fresco', qty: 1 },
         ]
       },
       {
         name: 'Causa Rellena de Pollo',
         ingredients: [
-          { name: '1 kilogramo de papas', qty: 2 },
-          { name: '5 cucharadas de pasta de ají amarillo', qty: 2 },
-          { name: '2 paltas', qty: 2 },
+          { name: '1 kilogramo de papas', qty: 1 },
+          { name: 'Cucharadas de pasta de ají amarillo', qty: 5 },
+          { name: 'Paltas', qty: 2 },
         ]
       },
       {
         name: 'Lomo Saltado de Pollo',
         ingredients: [
-          { name: '4 pechugas de pollo', qty: 2 },
-          { name: '5 tallos de cebolla china', qty: 2 },
-          { name: '1 cebolla', qty: 2 },
-          { name: '2 tomates', qty: 2 },
+          { name: 'Pechugas de pollo', qty: 4 },
+          { name: 'Tallos de cebolla china', qty: 5 },
+          { name: 'Cebolla', qty: 1 },
+          { name: 'Tomates', qty: 2 },
         ]
       },
-    ]
+    ];
   }
 
   ngOnInit(): void {
+  }
+
+  selectedDish(dish: Dish): void {
+    this.dish = dish;
   }
 
 }

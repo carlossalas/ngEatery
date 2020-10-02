@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Dish, Ingredient } from '../interfaces';
 
 @Component({
   selector: 'app-dish',
@@ -7,17 +8,23 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class DishComponent implements OnInit {
 
-  private _name: string;
+  @Input() dish: Dish;
+  @Output() onSelectDish = new EventEmitter<Dish>();
+
+  /* private _name: string;
   @Input() set name(value: string) {
     this._name = this.generateName(value);
-  }
+  } */
   get name(): string {
-    return this._name;
+    return this.generateName(this.dish.name);
   }
 
-  private _ingredients: [];
+  /* private _ingredients: [];
   @Input() set ingredients(list: []) {
     this._ingredients = list;
+  } */
+  get ingredients(): Array<Ingredient> {
+    return this.dish.ingredients;
   }
 
   constructor() { }
@@ -26,11 +33,16 @@ export class DishComponent implements OnInit {
   }
 
   generateName = (name: string) => {
-    return `El nombre es: ${name}`;
+    return `Receta: ${name}`;
   }
 
-  generateCantIngredient = (list: []) => {
-    return `La cantidad de ingredientes es: ${this._ingredients.length}`;
+  generateCantIngredient = () => {
+    return `Cantidad: ${this.ingredients.length}`;
+  }
+
+  selectDish(): void {
+    console.log('selectDish', this.dish);
+    this.onSelectDish.emit(this.dish);
   }
 
 }
